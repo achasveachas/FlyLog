@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114043018) do
+ActiveRecord::Schema.define(version: 20161114043912) do
 
   create_table "airplanes", force: :cascade do |t|
     t.string   "make"
     t.string   "model"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "flight_airplanes", force: :cascade do |t|
+    t.integer  "flight_id"
+    t.integer  "airplane_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["airplane_id"], name: "index_flight_airplanes_on_airplane_id"
+    t.index ["flight_id"], name: "index_flight_airplanes_on_flight_id"
   end
 
   create_table "flights", force: :cascade do |t|
