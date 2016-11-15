@@ -14,7 +14,7 @@ class PilotsController < ApplicationController
     if @pilot.save
       raise @pilot.inspect
     else
-      raise "error"
+      render :new
     end
   end
 

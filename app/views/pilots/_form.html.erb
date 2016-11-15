@@ -1,4 +1,15 @@
 <br><br>
+<% if @pilot.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@pilot.errors.count, "error") %> prohibited this pilot from being saved:</h2>
+
+    <ul>
+    <% @pilot.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <%= form_for(@pilot) do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br><br>

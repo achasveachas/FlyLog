@@ -9,15 +9,20 @@
   </head>
 
   <body>
-    <div>
-      <%= link_to "Home", root_path %>
-      <%= link_to "Sign up", new_pilot_path if !current_pilot %>
-      <%= link_to "Sign in", signin_path if !current_pilot %>
-      <%= link_to "Log Out", logout_path, method: :post if current_pilot %>
-    </div>
-    <div class="container"  role="main">
-      <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
-      <%= yield %>
+    <div class="wrapper">
+      <div>
+        <%= link_to "Home", root_path %>
+        <%= link_to "Sign up", new_pilot_path if !current_pilot %>
+        <%= link_to "Sign in", signin_path if !current_pilot %>
+        <%= link_to "Log Out", logout_path, method: :post if current_pilot %>
+      </div>
+      <div class="container"  role="main">
+        <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+        <%= yield %>
+      </div>
+      <footer class="branding">
+        <small>&copy; <%= Time.now.year %> <strong><a href="http://yechiel.me">Yechiel K</a></strong></small>
+      </footer>
     </div>
   </body>
 </html>
