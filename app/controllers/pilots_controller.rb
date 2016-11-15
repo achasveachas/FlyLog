@@ -12,7 +12,7 @@ class PilotsController < ApplicationController
   def create
     @pilot = Pilot.new(pilot_params)
     if @pilot.save
-      raise @pilot.inspect
+      redirect_to pilot_path(@pilot)
     else
       render :new
     end
@@ -23,6 +23,9 @@ class PilotsController < ApplicationController
   end
 
   def update
+    @pilot = Pilot.find(params[:id])
+    @pilot.update_attributes(pilot_params)
+    redirect_to pilot_path(@pilot)
   end
 
   def destroy
