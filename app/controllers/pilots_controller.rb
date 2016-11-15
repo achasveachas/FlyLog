@@ -19,6 +19,7 @@ class PilotsController < ApplicationController
   end
 
   def edit
+    @pilot = Pilot.find(params[:id])
   end
 
   def update
