@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114043912) do
+ActiveRecord::Schema.define(version: 20161116013638) do
 
   create_table "airplanes", force: :cascade do |t|
     t.string   "make"
@@ -62,8 +62,9 @@ ActiveRecord::Schema.define(version: 20161114043912) do
     t.string   "email"
     t.string   "password_digest"
     t.integer  "age"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "admin",           default: false
   end
 
   create_table "ratings", force: :cascade do |t|
