@@ -45,6 +45,13 @@
      width: 85%;
    }
 
+   .banner-image {
+     width: auto;
+     height: auto;
+     max-width: 100%;
+     max-height: 100%;
+   }
+
    h1 {
      font-size: 36px;
      line-height: 54px;
