@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_pilot
+  helper_method :current_pilot, :can_edit?
 
   private
 

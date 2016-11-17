@@ -85,6 +85,12 @@
       color: red;
     }
 
+    .error {
+      color: #f00;
+      background: lightpink;
+      font-weight: bold
+    }
+
    .sidebar {
      background: #eee;
      border: 1px solid #ccc;

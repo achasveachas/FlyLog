@@ -12,6 +12,7 @@ class PilotsController < ApplicationController
   def create
     @pilot = Pilot.new(pilot_params)
     if @pilot.save
+      login(@pilot)
       redirect_to pilot_path(@pilot)
     else
       render :new
@@ -20,6 +21,10 @@ class PilotsController < ApplicationController
 
   def edit
     @pilot = Pilot.find(params[:id])
+    if !can_edit?
+      flash[:notice] = "You do not have permission to edit this page"
+      redirect_to root_path
+    end
   end
 
   def update
