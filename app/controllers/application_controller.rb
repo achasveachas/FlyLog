@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
   def current_pilot
     Pilot.find_by(id: session[:pilot_id])
   end
+
+  def can_edit?
+    current_pilot && (current_pilot.admin || @pilot == current_pilot)
+  end
 end
