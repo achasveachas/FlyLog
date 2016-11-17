@@ -1,2 +1,8 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h2>Log in:</h2>
+<%= form_for :pilot, url: signin_path do |f| %>
+  <%= f.label :email %><br>
+  <%= f.email_field :email %><br><br>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br><br>
+  <%= f.submit "Sign In" %>
+<% end %>

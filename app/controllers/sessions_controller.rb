@@ -4,10 +4,11 @@ class SessionsController < ApplicationController
 
   def create
     @pilot = Pilot.find_by(email: params[:pilot][:email])
-    if !!@pilot
+    if !!@pilot && @pilot.authenticate(params[:pilot][:password])
       login(@pilot)
       redirect_to pilot_path(@pilot)
     else
+      flash[:notice] = "Invalid email address or password."
       redirect_to signin_path
     end
   end
