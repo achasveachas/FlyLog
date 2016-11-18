@@ -4,7 +4,7 @@ class LogBook < ApplicationRecord
   has_many :flights
 
   def total_flight_time
-    minutes = self.flights.size > 0 ? self.flights.sum(:duration) : 0
+    minutes = self.flights.sum(:duration)
     hours = 0
     until minutes < 60
       minutes -= 60
