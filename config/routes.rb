@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
+  #Omniauth routes
+  get '/auth/github/callback' => 'sessions#create_oauth'
   resources :pilots
 end

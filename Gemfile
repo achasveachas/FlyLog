@@ -30,6 +30,7 @@ gem 'pry'
 # Omniauth gems
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

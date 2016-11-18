@@ -17,10 +17,12 @@
   <%= f.text_field :age %><br><br>
   <label for="pilot_email">Email: (required)</label><br>
   <%= f.email_field :email %><br><br>
-  <label for="pilot_password">Password:</label><br>
-  <%= f.password_field :password %><br><br>
-  <label for="pilot_password_confirmation">Password confirmation:</label><br>
-  <%= f.password_field :password_confirmation %><br><br>
+  <% if !current_pilot %>
+    <label for="pilot_password">Password:</label><br>
+    <%= f.password_field :password %><br><br>
+    <label for="pilot_password_confirmation">Password confirmation:</label><br>
+    <%= f.password_field :password_confirmation %><br><br>
+  <% end %>
   <%= f.collection_check_boxes :rating_ids, Rating.all, :id, :rating %><br><br>
   <%= f.submit %>
 <% end %>

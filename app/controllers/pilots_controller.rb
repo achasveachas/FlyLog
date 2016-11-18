@@ -30,7 +30,7 @@ class PilotsController < ApplicationController
 
   def update
     @pilot = Pilot.find(params[:id])
-    @pilot.update_attributes(pilot_params)
+    @pilot.update(pilot_params)
     redirect_to pilot_path(@pilot)
   end
 
