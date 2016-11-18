@@ -1,3 +1,18 @@
 // Place all the styles related to the pilots controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.pilot-info {
+  border-radius: 25px;
+  width: 40%;
+  background-color: gainsboro;
+  padding: 20px;
+}
+
+.pilot-info ol  {
+  -moz-column-count: 4;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 20px;
+  column-count: 2;
+  column-gap: 1px;
+}
