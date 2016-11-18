@@ -1,0 +1,14 @@
+<div class="pilot-info">
+  <h2>Pilot info:</h2>
+  <ul>
+    <li><strong>Name:</strong><%= " #{@pilot.name.capitalize}" %></li>
+    <li><strong>Age:</strong><%= @pilot.age ? " #{@pilot.age}" : "  N/A" %></li>
+    <li><strong>Flight Hours:</strong><%= " #{@pilot.log_books.last.total_flight_time}" %></li>
+    <li><strong>Ratings:</strong></li>
+    <ol>
+      <% @pilot.ratings.each do |rating| %>
+        <li><%= "  *  #{rating.rating}" %></li>
+      <% end %>
+    </ol>
+  </ul>
+</div>
