@@ -1,7 +1,7 @@
 class Pilot < ApplicationRecord
   has_secure_password
   has_many :log_books
-  has_many :flights, through: :log_book
+  has_many :flights, through: :log_books
   has_many :pilot_ratings
   has_many :ratings, through: :pilot_ratings
   validates :name, :email, presence: true

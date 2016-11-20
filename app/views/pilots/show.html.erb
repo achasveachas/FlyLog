@@ -1,2 +1,7 @@
 <h1><%= "#{@pilot.name.capitalize}" %></h1>
 <%= render 'pilot-info' %>
+<% if @pilot.flights.size == 0 %>
+  <p>
+    Looks like you don't have any flights yet. click <%= link_to "here", new_pilot_flight_path(@pilot) %> to register your first flight.
+  </p>
+<% end %>
