@@ -1,5 +1,7 @@
 <h2>Log in:</h2>
 <h3><%= link_to "Sign in with your GitHub account", "/auth/github" %> </h3>
+<br>
+<h3>Or log in using your email address and password:</h3>
 <%= form_for :pilot, url: signin_path do |f| %>
   <%= f.label :email %><br>
   <%= f.email_field :email %><br><br>

@@ -99,7 +99,10 @@
     .error {
       color: #f00;
       background: lightpink;
-      font-weight: bold
+      font-weight: bold;
+      padding: 3px;
+      border-radius: 25px;
+      text-align: center;
     }
 
    .sidebar {
