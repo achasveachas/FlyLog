@@ -1,3 +1,5 @@
-<%= form_for @flight do |f| %>
-  
+<%= form_for @flight, url: {action: "create"} do |f| %>
+  <%= f.label :date %><br>
+  <%= f.date_select :date %><br><br>
+  <%= f.submit %>
 <% end%>

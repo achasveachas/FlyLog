@@ -11,11 +11,12 @@ class FlightsController < ApplicationController
       flash[:notice] = "You do not have permission to edit this page"
       redirect_to root_path
     else
-      @flight = @pilot.flights.new
+      @flight = Flight.new(log_book_id: @pilot.log_books.last.id)
     end
   end
 
   def create
+    raise params.inspect
   end
 
   def edit
