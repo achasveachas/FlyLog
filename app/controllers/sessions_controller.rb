@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
   def create_oauth
     if @pilot = Pilot.find_by(email: request.env['omniauth.auth']['info']['email'])
+      login(@pilot)
       redirect_to pilot_path(@pilot)
     else
       @pilot = Pilot.create(email: request.env['omniauth.auth']['info']['email'], name: request.env['omniauth.auth']['info']['name'], password: "randompassword", password_confirmation: "randompassword")
