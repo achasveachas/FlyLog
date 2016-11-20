@@ -28,12 +28,18 @@
 
    /* --- Welcome Page Styles --- */
    body {
-     background-image: url("Cloud-HD-Wallpapers.jpg");
      color: #333;
      font-family: Sans-Serif;
      line-height: 18px;
+     background-image: url("Cloud-HD-Wallpapers.jpg");
+     background-attachment: fixed;
+     background-position: top;
    }
 
+   .background-image {
+     background-attachment: fixed;
+     background-position: top;
+   }
    .wrapper {
      background: #fff;
      -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -55,10 +61,11 @@
    h1 {
      font-size: 36px;
      line-height: 54px;
+     border-bottom: 2px solid #ccc;
+
    }
 
    h2 {
-     border-bottom: 2px solid #ccc;
      font-size: 24px;
      line-height: 36px;
      margin-bottom: 16px;
