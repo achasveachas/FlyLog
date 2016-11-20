@@ -1,5 +1,13 @@
 <%= form_for @flight, url: {action: "create"} do |f| %>
   <%= f.label :date %><br>
   <%= f.date_select :date %><br><br>
+  <%= f.label :origin %><br>
+  <%= f.text_field :origin %><br><br>
+  <%= f.label :destination %><br>
+  <%= f.text_field :destination %><br><br>
+  <%= f.label :notes %><br>
+  <%= f.text_area :notes, size: "40x12" %><br><br>
+  <%= f.label :instructor %><br>
+  <%= f.text_field :instructor %><br><br>
   <%= f.submit %>
 <% end%>
