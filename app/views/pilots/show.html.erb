@@ -1,5 +1,75 @@
 <h1><%= "#{@pilot.name.capitalize}" %></h1>
 <%= render 'pilot-info' %>
+<table class="logbook">
+  <tr class="w3-theme-d3">
+    <th id="number">No.</th>
+    <th id="date">Date</th>
+    <th id="plane">Make and Model</th>
+    <th id="tail">Tail Number</th>
+    <th id="from">From</th>
+    <th id="to">To</th>
+    <th id="duration">Duration</th>
+    <th id="notes">Notes</th>
+    <th id="instructor">Instructor</th>
+  </tr>
+  <tr class="w3-theme-l3">
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+  </tr>
+  <tr class="w3-theme-l4">
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+    <td>
+      test
+    </td>
+  </table>
 <% if @pilot.flights.size == 0 %>
   <p>
     Looks like you don't have any flights yet. click <%= link_to "here", new_pilot_flight_path(@pilot) %> to register your first flight.

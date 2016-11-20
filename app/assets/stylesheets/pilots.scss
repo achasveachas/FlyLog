@@ -17,3 +17,56 @@
   column-count: 2;
   column-gap: 1px;
 }
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+table, th, td {
+    border-left: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+  height: 50px;
+  padding: 5px;
+}
+
+th {
+  border-bottom: 1px solid black;
+}
+
+th#number{
+  width: 3%
+}
+
+th#date{
+  width: 7%
+}
+
+th#plane{
+  width: 15%
+}
+
+th#tail{
+  width: 10%
+}
+
+th#from{
+  width: 3.3%
+}
+
+th#to{
+  width: 3.3%
+}
+
+th#duration{
+  width: 3.3%
+}
+
+th#notes{
+  width: 35%
+}
