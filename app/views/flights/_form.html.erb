@@ -29,6 +29,11 @@
   <%= f.text_field :origin %><br><br>
   <%= f.label :destination %><br>
   <%= f.text_field :destination %><br><br>
+  <%= f.label :duration %><br>
+  <%= f.label :hours %>
+  <%= f.select :hours, 0..10 %>
+  <%= f.label :minutes %>
+  <%= f.select :minutes, 0..60 %><br><br>
   <%= f.label :notes %><br>
   <%= f.text_area :notes, size: "40x12" %><br><br>
   <%= f.label :instructor %><br>

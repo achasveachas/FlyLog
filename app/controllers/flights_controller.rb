@@ -45,6 +45,6 @@ class FlightsController < ApplicationController
   private
 
   def flight_params
-    params.require(:flight).permit(:date, :origin, :destination, :notes, :instructor, flight_airplanes_attributes: [:tail_number, airplane_attributes: [:make, :model]])
+    params.require(:flight).permit(:date, :origin, :destination, :notes, :instructor, :hours, :minutes, flight_airplanes_attributes: [:tail_number, airplane_attributes: [:make, :model]])
   end
 end
