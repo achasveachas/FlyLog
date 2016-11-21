@@ -12,12 +12,13 @@ class FlightsController < ApplicationController
       redirect_to root_path
     else
       @flight = @pilot.flights.new
-      @flight_airplane = @flight.flight_airplanes.build
-      @airplane = @flight_airplane.build_airplane
+      @flight_airplanes = @flight.flight_airplanes.build
+      @airplane = @flight_airplanes.build_airplane
     end
   end
 
   def create
+    raise params.inspect
     @pilot = Pilot.find_by(id: params[:pilot_id])
     @flight = @pilot.log_books.first.flights.new(flight_params)
     if @flight.save
@@ -37,6 +38,6 @@ class FlightsController < ApplicationController
   end
 
   def flight_params
-    params.require(:flight).permit(:date, :origin, :destination, :notes, :instructor)
+    params.require(:flight).permit(:date, :origin, :destination, :notes, :instructor, airplane: [:make, :model], flight_airplane: [:tail_number])
   end
 end
