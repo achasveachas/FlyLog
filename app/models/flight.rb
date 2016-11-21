@@ -1,4 +1,5 @@
 class Flight < ApplicationRecord
+  include DisplayTime::InstanceMethods
   belongs_to :log_book
   has_many :flight_airplanes
   has_many :airplanes, through: :flight_airplanes
@@ -13,14 +14,9 @@ class Flight < ApplicationRecord
     self.duration += hours.to_i*60 + minutes.to_i
   end
 
-  def display_time
+  def time
     minutes = self.duration
-    hours = 0
-    until minutes < 60
-      minutes -= 60
-      hours += 1
-    end
-    "#{hours}:#{minutes.to_s.rjust(2, "0")}"
+    display_time(minutes)
   end
 
 end
