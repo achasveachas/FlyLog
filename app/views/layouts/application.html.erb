@@ -12,6 +12,7 @@
   <body>
     <div class="wrapper">
       <div>
+        Hello <%= current_pilot.name if current_pilot %><br>
         <%= link_to "Home", root_path %>
         <%= link_to "Sign up", new_pilot_path if !current_pilot %>
         <%= link_to "Sign in", signin_path if !current_pilot %>

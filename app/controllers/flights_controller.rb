@@ -18,7 +18,13 @@ class FlightsController < ApplicationController
   end
 
   def create
-    raise params.inspect
+    @pilot = Pilot.find_by(id: params[:pilot_id])
+    @flight = @pilot.log_books.first.flights.new(flight_params)
+    if @flight.save
+      redirect_to pilot_path(@flight.pilot)
+    else
+      raise @flight.inspect
+    end
   end
 
   def edit
@@ -28,5 +34,9 @@ class FlightsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def flight_params
+    params.require(:flight).permit(:date, :origin, :destination, :notes, :instructor)
   end
 end
