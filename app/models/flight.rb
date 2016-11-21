@@ -3,4 +3,5 @@ class Flight < ApplicationRecord
   has_many :flight_airplanes
   has_many :airplanes, through: :flight_airplanes
   validates :origin, presence: true
+  accepts_nested_attributes_for :airplanes
 end
