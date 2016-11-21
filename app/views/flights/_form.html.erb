@@ -1,23 +1,29 @@
 <%= form_for @flight, url: {action: "create"} do |f| %>
   <%= f.label :date %><br>
   <%= f.date_select :date %><br><br>
-  <%= f.fields_for :airplanes, Airplane.new do |plane| %>
-    <%= plane.label "Airplane:" %><br>
-    <%= plane.label :make %><br>
-    <%= plane.text_field :make, list: "makes" %><br>
-    <datalist id="makes">
-      <% Airplane.select("make").group("make").each do |plane| %>
-        <option value="<%=plane.make%>">
-      <% end %>
-    </datalist>
-    <%= plane.label :model %><br>
-    <%= plane.text_field :model, list: "models" %><br><br>
-    <datalist id="models">
-      <% Airplane.select("model").group("model").each do |plane| %>
-        <option value="<%=plane.model%>">
-      <% end %>
-    </datalist>
+  <!-- nested form for the Airplane associated with the Flight -->
+  <%= f.fields_for :flight_airplanes do |flight_plane| %>
+    <%= f.fields_for :airplane do |plane| %>
+      <%= plane.label "Airplane:" %><br>
+      <%= plane.label :make %><br>
+      <%= plane.text_field :make, list: "makes" %><br>
+      <datalist id="makes">
+        <% Airplane.select("make").group("make").each do |plane| %>
+          <option value="<%=plane.make%>">
+        <% end %>
+      </datalist>
+      <%= plane.label :model %><br>
+      <%= plane.text_field :model, list: "models" %><br>
+      <datalist id="models">
+        <% Airplane.select("model").group("model").each do |plane| %>
+          <option value="<%=plane.model%>">
+        <% end %>
+      </datalist>
+    <% end %>
+    <%= flight_plane.label :tail_number %><br>
+    <%= flight_plane.text_field :tail_number %><br><br>
   <% end %>
+
   <%= f.label :origin %><br>
   <%= f.text_field :origin %><br><br>
   <%= f.label :destination %><br>

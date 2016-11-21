@@ -11,7 +11,9 @@ class FlightsController < ApplicationController
       flash[:notice] = "You do not have permission to edit this page"
       redirect_to root_path
     else
-      @flight = Flight.new(log_book_id: @pilot.log_books.last.id)
+      @flight = @pilot.flights.new
+      @flight_airplane = @flight.flight_airplanes.build
+      @airplane = @flight_airplane.build_airplane
     end
   end
 
