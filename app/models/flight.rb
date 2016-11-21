@@ -13,4 +13,14 @@ class Flight < ApplicationRecord
     self.duration += hours.to_i*60 + minutes.to_i
   end
 
+  def display_time
+    minutes = self.duration
+    hours = 0
+    until minutes < 60
+      minutes -= 60
+      hours += 1
+    end
+    "#{hours}:#{minutes.to_s.rjust(2, "0")}"
+  end
+
 end
