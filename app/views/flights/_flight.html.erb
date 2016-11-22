@@ -2,10 +2,10 @@
   <td>#</th>
   <td><%= flight.date.strftime("%m/%d/%Y") %></th>
   <td><%= "#{flight.airplanes.first.make if flight.airplanes.first} #{flight.airplanes.first.model if flight.airplanes.first}" %></th>
-  <td><%= "#{flight.flight_airplanes.first.tail_number if flight.flight_airplanes.first}" %></th>
+  <td><%= "#{flight.flight_airplanes.first.tail_number.upcase if flight.flight_airplanes.first}" %></th>
   <td><%= "#{flight.origin.upcase}" %></th>
   <td><%= "#{flight.destination.upcase if flight.destination}" %></th>
   <td><%= "#{flight.time}" %></th>
-  <td><%= "#{flight.notes.gsub(/\n/, "<br>")}"%> </th>
+  <td><%= simple_format(flight.notes) %> </th>
   <td><%= "#{flight.instructor}" %></th>
 </tr>

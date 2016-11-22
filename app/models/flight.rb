@@ -10,7 +10,6 @@ class Flight < ApplicationRecord
   before_save :update_duration
 
   def update_duration
-    binding.pry
     self.duration += hours.to_i*60 + minutes.to_i
   end
 
