@@ -14,10 +14,10 @@
   </tr>
   <%= render(@flights) || "Looks like you don't have any flights yet. click  #{link_to "here", new_pilot_flight_path(@pilot)} to register your first flight." %>
   <tr id="total">
-    <td colspan="5"></td>
-    <td>Total:</td>
+    <td colspan="4" class="hidden"></td>
+    <td colspan="2">Total:</td>
     <td><%= @pilot.log_books.first.total_flight_time %></td>
-    <td colspan="2"></td>
+    <td colspan="2" class="hidden"></td>
   </tr>
 </table>
 <%= link_to "New Flight", new_pilot_flight_path(@pilot), id: "new-flight" %>
