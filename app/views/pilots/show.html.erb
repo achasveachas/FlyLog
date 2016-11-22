@@ -14,3 +14,4 @@
   </tr>
   <%= render(@flights) || "Looks like you don't have any flights yet. click  #{link_to "here", new_pilot_flight_path(@pilot)} to register your first flight." %>
 </table>
+<%= link_to "New Flight", new_pilot_flight_path(@pilot), id: "new-flight" %>
