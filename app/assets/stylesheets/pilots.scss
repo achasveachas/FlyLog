@@ -32,11 +32,20 @@ table, th, td {
 
 th, td {
   height: 50px;
-  padding: 5px;
+  padding: 8px;
+
 }
 
 th {
   border-bottom: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: #d0ecf7;
+}
+
+tr:nth-child(odd) {
+  background-color: #e7f5fb;
 }
 
 th#number{
