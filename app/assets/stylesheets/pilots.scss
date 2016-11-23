@@ -84,8 +84,17 @@ td.hidden {
   visibility: hidden;
 }
 
+td.new-flight {
+  background-color: white;
+  border-style: hidden;
+  border-top: 1px black solid;
+  text-align: right;
+  font-size: 1.5em
+}
+
 tr#total{
   visibility: visible;
   font-weight: bold;
   border-top: 1px solid black;
+
 }

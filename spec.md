@@ -8,13 +8,13 @@ Specs:
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity) - flight_airplanes stores the tail_number for the airplane used during the flight.
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item) - Pilt and Flight include validations of required features
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes) - Have a total_flight_hours for logbooks (and by extension, pilots)
-- [ ] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)
+- [x] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item) - Flight form has airplane form nested in it with custom attribute writer to make sure duplicate airplanes aren't created.
 - [x] Include signup (how e.g. Devise) - Pilots can sign up
 - [x] Include login (how e.g. Devise) - Pilots can log in
 - [x] Include logout (how e.g. Devise) - Pilots can log out
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth) - GitHub omniauth
 - [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients) - pilot/:id/flight/new
 - [x] Include form display of validation errors (form URL e.g. /recipes/new) - Sign up form displays validation errors when required fields are missing or wrong format
 
 Confirm:
