@@ -1,2 +1,14 @@
-<h1>Flights#show</h1>
-<p>Find me in app/views/flights/show.html.erb</p>
+<h1>Flight Info</h1>
+<div class="flight-info">
+  <ul>
+    <li><strong>Pilot:</strong><%= " #{@pilot.name.capitalize}" %></li>
+    <li><strong>Flight Date:</strong><%= @flight.date.strftime("%m/%d/%Y") %></li>
+    <li><strong>Flight Duration:</strong><%= " #{@flight.time}" %></li>
+    <li><strong>Airplane:</strong></li>
+    <li>- Make/Model: <%= "#{@flight.airplanes.first.make_model if @flight.airplanes.first}" %></li>
+    <li>- Tail Number: <%= "#{@flight.flight_airplanes.first.tail_number if @flight.flight_airplanes.first}" %></li>
+    <li><strong>Instructor:</strong><%= " #{@flight.instructor}" %></li>
+    <li><strong>Notes:</strong><br><%= " #{@flight.notes}" %></li>
+  </ul><br>
+  <%= link_to "Edit flight", edit_pilot_flight_path(@pilot, @flight) if can_edit? %> | <%= link_to "Delete flight", flight_path(@flight), method: :delete if can_edit? %>
+</div>

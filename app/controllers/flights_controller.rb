@@ -3,6 +3,8 @@ class FlightsController < ApplicationController
   end
 
   def show
+    @pilot = Pilot.find_by(id: params[:pilot_id])
+    @flight = Flight.find_by(id: params[:id])
   end
 
   def new
@@ -34,6 +36,12 @@ class FlightsController < ApplicationController
   end
 
   def edit
+    @pilot = Pilot.find_by(id: params[:pilot_id])
+    @flight = Flight.find_by(id: params[:id])
+    if !can_edit?
+      flash[:notice] = "You do not have permission to edit this page"
+      redirect_to :back
+    end
   end
 
   def update

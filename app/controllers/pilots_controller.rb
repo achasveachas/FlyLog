@@ -46,7 +46,7 @@ class PilotsController < ApplicationController
       @pilot.destroy
       redirect_to pilots_path
     else
-      flash[:notice] = "You do not have permission to edit this page"
+      flash[:notice] = "You can not delete this pilot"
       redirect_to :back
     end
   end
