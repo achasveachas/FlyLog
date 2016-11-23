@@ -9,7 +9,7 @@ class FlightsController < ApplicationController
     @pilot = Pilot.find_by(id: params[:pilot_id])
     if !can_edit?
       flash[:notice] = "You do not have permission to edit this page"
-      redirect_to root_path
+      redirect_to :back
     else
       @flight = @pilot.flights.new
       @flight_airplanes = @flight.flight_airplanes.build
@@ -29,7 +29,7 @@ class FlightsController < ApplicationController
       end
     else
       flash[:notice] = "You do not have permission to edit this page"
-      redirect_to root_path
+      redirect_to :back
     end
   end
 

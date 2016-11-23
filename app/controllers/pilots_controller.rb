@@ -25,14 +25,19 @@ class PilotsController < ApplicationController
     @pilot = Pilot.find(params[:id])
     if !can_edit?
       flash[:notice] = "You do not have permission to edit this page"
-      redirect_to root_path
+      redirect_to :back
     end
   end
 
   def update
     @pilot = Pilot.find(params[:id])
-    @pilot.update(pilot_params)
-    redirect_to pilot_path(@pilot)
+    if can_edit?
+      @pilot.update(pilot_params)
+      redirect_to pilot_path(@pilot)
+    else
+      flash[:notice] = "You do not have permission to edit this page"
+      redirect_to :back
+    end
   end
 
   def destroy
