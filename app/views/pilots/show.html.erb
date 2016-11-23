@@ -12,7 +12,10 @@
     <th id="notes">Notes</th>
     <th id="instructor">Instructor</th>
   </tr>
-  <%= render(@flights) || "Looks like you don't have any flights yet. click  #{link_to "here", new_pilot_flight_path(@pilot)} to register your first flight." %>
+  <% @flights.each.with_index(1) do |flight, index| %>
+    <%= render partial: "flight", locals: {flight: flight, index: index} %>
+  <% end %>
+
   <tr id="total">
     <td colspan="4" class="hidden"></td>
     <td colspan="2">Total:</td>

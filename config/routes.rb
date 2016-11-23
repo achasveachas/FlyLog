@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/auth/github/callback' => 'sessions#create_oauth'
 
   resources :pilots do
-    resources :flights
+    resources :flights, only: [:new, :create, :edit, :update]
   end
+
+  resources :flights, only: [:show, :destroy]
 end
