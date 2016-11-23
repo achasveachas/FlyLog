@@ -14,7 +14,7 @@ class Flight < ApplicationRecord
     self.flight_airplanes.update(flight_airplane["0"])
   end
 
-  def update_duration
+  def update_duration(hours, minutes)
     self.duration = hours.to_i*60 + minutes.to_i
   end
 

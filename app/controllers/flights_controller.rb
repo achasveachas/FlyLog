@@ -24,7 +24,7 @@ class FlightsController < ApplicationController
     if can_edit?
       @flight = @pilot.log_books.first.flights.new(flight_params)
       @flight.flight_airplanes.last.flight = @flight
-      @flight.update_duration
+      @flight.update_duration(params[:flight][:hours], params[:flight][:minutes])
       if @flight.save
         redirect_to pilot_path(@flight.pilot)
       else
@@ -53,7 +53,8 @@ class FlightsController < ApplicationController
       redirect_to :back
     else
       @flight.update_attributes(flight_params)
-      @flight.update_duration
+      @flight.update_duration(params[:flight][:hours], params[:flight][:minutes])
+      @flight.save
       redirect_to pilot_flight_path(@pilot, @flight)
     end
   end
@@ -64,6 +65,6 @@ class FlightsController < ApplicationController
   private
 
   def flight_params
-    params.require(:flight).permit(:date, :origin, :destination, :notes, :instructor, :hours, :minutes, flight_airplanes_attributes: [:tail_number, airplane_attributes: [:make, :model]])
+    params.require(:flight).permit(:date, :origin, :destination, :notes, :instructor, flight_airplanes_attributes: [:tail_number, airplane_attributes: [:make, :model]])
   end
 end
