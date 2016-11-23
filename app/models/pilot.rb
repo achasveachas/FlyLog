@@ -1,8 +1,8 @@
 class Pilot < ApplicationRecord
   has_secure_password
-  has_many :log_books
+  has_many :log_books, dependent: :delete_all
   has_many :flights, through: :log_books
-  has_many :pilot_ratings
+  has_many :pilot_ratings, dependent: :delete_all
   has_many :ratings, through: :pilot_ratings
   validates :name, :email, presence: true
   validates :email, format: {with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i}

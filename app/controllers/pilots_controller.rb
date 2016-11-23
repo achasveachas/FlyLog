@@ -41,6 +41,14 @@ class PilotsController < ApplicationController
   end
 
   def destroy
+    @pilot = Pilot.find_by(id: params[:id])
+    if current_pilot.admin && current_pilot != @pilot
+      @pilot.destroy
+      redirect_to pilots_path
+    else
+      flash[:notice] = "You do not have permission to edit this page"
+      redirect_to :back
+    end
   end
 
   private
