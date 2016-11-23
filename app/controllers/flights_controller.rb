@@ -24,6 +24,7 @@ class FlightsController < ApplicationController
     if can_edit?
       @flight = @pilot.log_books.first.flights.new(flight_params)
       @flight.flight_airplanes.last.flight = @flight
+      @flight.update_duration
       if @flight.save
         redirect_to pilot_path(@flight.pilot)
       else
@@ -45,6 +46,16 @@ class FlightsController < ApplicationController
   end
 
   def update
+    @pilot = Pilot.find_by(id: params[:pilot_id])
+    @flight = Flight.find_by(id: params[:id])
+    if !can_edit?
+      flash[:notice] = "You do not have permission to edit this page"
+      redirect_to :back
+    else
+      @flight.update_attributes(flight_params)
+      @flight.update_duration
+      redirect_to pilot_flight_path(@pilot, @flight)
+    end
   end
 
   def destroy

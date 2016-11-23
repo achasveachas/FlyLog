@@ -1,4 +1,4 @@
-<%= form_for @flight, url: {action: "create"} do |f| %>
+<%= form_for [@pilot, @flight] do |f| %>
   <%= f.label :date %><br>
   <%= f.date_select :date %><br><br>
   <!-- nested form for the Airplane associated with the Flight -->
@@ -33,7 +33,7 @@
   <%= f.label :hours %>
   <%= f.select :hours, 0..10 %>
   <%= f.label :minutes %>
-  <%= f.select :minutes, 0..60 %><br><br>
+  <%= f.select :minutes, 0...60 %><br><br>
   <%= f.label :notes %><br>
   <%= f.text_area :notes, size: "40x12" %><br><br>
   <%= f.label :instructor %><br>
