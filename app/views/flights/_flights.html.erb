@@ -1,0 +1,34 @@
+<table class="logbook">
+  <tr class="w3-theme-d3">
+    <th id="number">No.</th>
+    <th id="date">Date</th>
+    <th id="plane">Airlane<br>Make and Model</th>
+    <th id="tail">Tail Number</th>
+    <th id="from">From</th>
+    <th id="to">To</th>
+    <th id="duration">Duration</th>
+    <th id="notes">Notes</th>
+    <th id="instructor">Instructor</th>
+  </tr>
+  <% @flights.each.with_index(1) do |flight, index| %>
+    <tr>
+      <td><%= link_to index, flight_path(flight) %></td>
+      <td><%= flight.date.strftime("%m/%d/%Y") %></th>
+      <td><%= "#{flight.airplanes.first.make if flight.airplanes.first} #{flight.airplanes.first.model if flight.airplanes.first}" %></td>
+      <td><%= "#{flight.flight_airplanes.first.tail_number.upcase if flight.flight_airplanes.first}" %></td>
+      <td><%= "#{flight.origin.upcase}" %></th>
+      <td><%= "#{flight.destination.upcase if flight.destination}" %></td>
+      <td><%= "#{flight.time}" %></th>
+      <td><%= simple_format(flight.notes) %> </td>
+      <td><%= "#{flight.instructor}" %></td>
+    </tr>
+  <% end %>
+
+  <tr id="total">
+    <td colspan="4" class="hidden"></td>
+    <td colspan="2">Total:</td>
+    <td><%= @pilot.log_books.first.total_flight_time %></td>
+    <td class="hidden"></td>
+    <td class="new-flight"><%= link_to "New Flight", new_pilot_flight_path(@pilot) if can_edit? %></td>
+  </tr>
+</table>
