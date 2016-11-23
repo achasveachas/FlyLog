@@ -10,6 +10,6 @@
         <li><%= "  *  #{rating.rating}" %></li>
       <% end %>
     </ol>
-  </ul>
-  
+  </ul><br>
+  <%= link_to "Edit Pilot", edit_pilot_path(@pilot) if can_edit? %>
 </div>
