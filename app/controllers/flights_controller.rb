@@ -25,7 +25,7 @@ class FlightsController < ApplicationController
       @flight = @pilot.log_books.first.flights.new(flight_params)
       @flight.flight_airplanes.last.flight = @flight
       @flight.update_duration(params[:flight][:hours], params[:flight][:minutes])
-      if @flight.save
+      if @flight.save!
         redirect_to pilot_path(@flight.pilot)
       else
         raise @flight.errors.inspect
