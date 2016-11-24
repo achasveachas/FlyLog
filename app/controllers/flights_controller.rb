@@ -60,6 +60,15 @@ class FlightsController < ApplicationController
   end
 
   def destroy
+    @pilot = Pilot.find_by(id: params[:pilot_id])
+    @flight = Flight.find_by(id: params[:id])
+    if can_edit?
+      @flight.destroy
+      redirect_to pilot_path(@pilot)
+    else
+      flash[:notice] = "You can not delete this flight"
+      redirect_to :back
+    end
   end
 
   private
