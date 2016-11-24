@@ -1,24 +1,24 @@
-# README
+## FlyLog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+FlyLog is a pilots logbook app, built using Rails.
 
-Things you may want to cover:
+Pilots can sign up using their GitHub accounts or with an email address.
 
-* Ruby version
+Once signed up, pilots can start logging their flights, and comparing their progress against other pilots.
 
-* System dependencies
+## Usage
 
-* Configuration
+For now the app can be accessed through the github repo (https://github.com/achasveachas/FlyLog)
 
-* Database creation
+Clone the log and fire it up using the Rails Server.
 
-* Database initialization
+Eventually it will be available via heroku
 
-* How to run the test suite
+## Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Bug reports and pull requests are welcome on GitHub at https://github.com/achasveachas/FlyLog or by email to achasveachas@gmail.com. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-* Deployment instructions
 
-* ...
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
