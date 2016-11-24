@@ -18,7 +18,7 @@ Airplane.create(make: "Airbus", model: "A380")
 
 
 20.times do
-  pilot = Pilot.new(name: Faker::Name.name, email: Faker::Internet.free_email, age: rand(16..99), password: "testtest", password_confirmation: "testtest")
+  pilot = Pilot.create(name: Faker::Name.name, email: Faker::Internet.free_email, age: rand(16..99), password: "testtest", password_confirmation: "testtest")
   3.times do
     pilot.ratings << Rating.order("RANDOM()").first
   end
@@ -27,11 +27,7 @@ end
 
 Pilot.all.each do |pilot|
   5.times do
-    flight = pilot.flights.new(date: Date.today, duration: rand(45..450), notes: Faker::Lorem.sentences(3).join(" "), instructor: Faker::Name.name)
-    flight.airplanes << Airplane.order("RANDOM()").first
-    flight.flight_airplanes.first.tail_number = "N#{Faker::Number.number(6)}"
-    flight.save
+    flight = pilot.log_books.last.flights.create(date: Date.today, duration: rand(45..450), origin: "FRG", notes: Faker::Lorem.sentences(3).join(" "), instructor: Faker::Name.name)
+    flight.flight_airplanes.create(tail_number: "N#{Faker::Number.number(6)}", airplane_id: Airplane.order("RANDOM()").first.id)
   end
-end
-
 end
