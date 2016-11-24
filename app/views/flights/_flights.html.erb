@@ -2,7 +2,7 @@
   <tr class="w3-theme-d3">
     <th id="number">No.</th>
     <th id="date">Date</th>
-    <th id="plane">Airlane<br>Make and Model</th>
+    <th id="plane">Airplane<br>Make and Model</th>
     <th id="tail">Tail Number</th>
     <th id="from">From</th>
     <th id="to">To</th>
@@ -13,7 +13,7 @@
   <% @flights.each.with_index(1) do |flight, index| %>
     <tr>
       <td><%= link_to index, pilot_flight_path(flight.pilot, flight) %></td>
-      <td><%= flight.date.strftime("%m/%d/%Y") %></th>
+      <td><%= flight.date.strftime("%m/%d/%Y") %></td>
       <td><%= "#{flight.airplanes.first.make_model if flight.airplanes.first}" %></td>
       <td><%= "#{flight.flight_airplanes.first.tail_number.upcase if flight.flight_airplanes.first}" %></td>
       <td><%= "#{flight.origin.upcase}" %></th>

@@ -1,2 +1,10 @@
-<h1>Pilots#index</h1>
-<p>Find me in app/views/pilots/index.html.erb</p>
+<h1>Pilot List:</h1>
+<table class="pilots">
+  <tr class="w3-theme-d3">
+    <th id="name">Name</th>
+    <th id="first-flight">First Flight</th>
+    <th id="ratings">Ratings</th>
+    <th id="total-hours">Total Hours</th>
+  </tr>
+  <%= render @pilots %>
+</table>

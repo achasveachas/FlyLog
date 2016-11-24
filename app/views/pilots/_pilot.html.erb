@@ -1,0 +1,6 @@
+<tr>
+  <td><%= link_to pilot.name, pilot_path(pilot) %></td>
+  <td><%= pilot.flights.first.date.strftime("%m/%d/%Y") %></td>
+  <td><strong><%= display_ratings(pilot) %></strong></td>
+  <td><%= pilot.log_books.first.total_flight_time %></td>
+</tr>

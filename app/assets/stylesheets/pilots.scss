@@ -18,8 +18,15 @@
   column-gap: 1px;
 }
 
-table {
+table.logbook {
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+table.pilots {
+  width: 50%;
   margin-top: 20px;
   margin-bottom: 20px;
   border: 1px solid black;
@@ -78,6 +85,22 @@ th#duration{
 
 th#notes{
   width: 35%
+}
+
+th#name{
+  width: 20%
+}
+
+th#first-flight{
+  width: 13%
+}
+
+th#ratings{
+  font-weight: bold;
+}
+
+th#total-hours{
+  width: 7%
 }
 
 td.hidden {

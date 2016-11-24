@@ -1,5 +1,6 @@
 class PilotsController < ApplicationController
   def index
+    @pilots = Pilot.all
   end
 
   def show
