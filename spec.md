@@ -13,7 +13,7 @@ Specs:
 - [x] Include login (how e.g. Devise) - Pilots can log in
 - [x] Include logout (how e.g. Devise) - Pilots can log out
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth) - GitHub omniauth
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients) - pilot/:id/flight/new
 - [x] Include form display of validation errors (form URL e.g. /recipes/new) - Sign up form displays validation errors when required fields are missing or wrong format
 
