@@ -4,7 +4,6 @@ class FlightAirplane < ApplicationRecord
   accepts_nested_attributes_for :airplane
 
   def airplane_attributes=(airplane)
-    raise airplane.inspect
     self.airplane = Airplane.find_or_create_by(make: airplane[:make], model: airplane[:model])
     self.airplane.update(airplane)
   end
