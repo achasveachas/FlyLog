@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125052935) do
+ActiveRecord::Schema.define(version: 20161125053418) do
 
   create_table "airplanes", force: :cascade do |t|
     t.string "make"
@@ -26,48 +26,38 @@ ActiveRecord::Schema.define(version: 20161125052935) do
   end
 
   create_table "flights", force: :cascade do |t|
-    t.integer  "log_book_id"
-    t.string   "origin"
-    t.string   "destination"
-    t.string   "instructor"
-    t.text     "notes"
-    t.integer  "duration",    default: 0
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.date     "date"
+    t.integer "log_book_id"
+    t.string  "origin"
+    t.string  "destination"
+    t.string  "instructor"
+    t.text    "notes"
+    t.integer "duration",    default: 0
+    t.date    "date"
     t.index ["log_book_id"], name: "index_flights_on_log_book_id"
   end
 
   create_table "log_books", force: :cascade do |t|
-    t.integer  "pilot_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "pilot_id"
     t.index ["pilot_id"], name: "index_log_books_on_pilot_id"
   end
 
   create_table "pilot_ratings", force: :cascade do |t|
-    t.integer  "pilot_id"
-    t.integer  "rating_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "pilot_id"
+    t.integer "rating_id"
     t.index ["pilot_id"], name: "index_pilot_ratings_on_pilot_id"
     t.index ["rating_id"], name: "index_pilot_ratings_on_rating_id"
   end
 
   create_table "pilots", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.integer  "age"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.boolean  "admin",           default: false
+    t.string  "name"
+    t.string  "email"
+    t.string  "password_digest"
+    t.integer "age"
+    t.boolean "admin",           default: false
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.string   "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "rating"
   end
 
 end
