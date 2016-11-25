@@ -55,11 +55,11 @@
   <body>
     <div class="wrapper">
       <div>
-        Hello <%= current_pilot.name if current_pilot %><br>
-        <%= link_to "Home", root_path %>
+        <h3>Hello <%= current_pilot.name if current_pilot %></h3>
+        <h4><%= link_to "Home", root_path %>
         <%= link_to "Sign up", new_pilot_path if !current_pilot %>
         <%= link_to "Sign in", signin_path if !current_pilot %>
-        <%= link_to "Log Out", logout_path, method: :post if current_pilot %>
+        <%= link_to "Log Out", logout_path, method: :post if current_pilot %></h4>
       </div>
       <div class="banner">
         <%= link_to image_tag("Banner06-GENERAL_AVIATION.jpg", class: "banner-image"), root_path %>
