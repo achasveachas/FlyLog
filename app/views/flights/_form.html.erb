@@ -3,7 +3,7 @@
   <%= f.date_select :date %><br><br>
   <!-- nested form for the Airplane associated with the Flight -->
 
-  <%= f.fields_for :flight_airplanes do |flight_plane| %>
+  <%= f.fields_for :flight_airplane do |flight_plane| %>
     <%= flight_plane.fields_for :airplane do |plane| %>
       <%= plane.label "Airplane:" %><br>
       <%= plane.label :make %><br>

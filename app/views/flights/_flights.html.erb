@@ -14,8 +14,8 @@
     <tr>
       <td><%= link_to index, pilot_flight_path(flight.pilot, flight) %></td>
       <td><%= flight.date.strftime("%m/%d/%Y") %></td>
-      <td><%= "#{flight.airplanes.first.make_model if flight.airplanes.first}" %></td>
-      <td><%= "#{flight.flight_airplanes.first.tail_number.upcase if flight.flight_airplanes.first}" %></td>
+      <td><%= "#{flight.airplane.make_model if flight.airplane}" %></td>
+      <td><%= "#{flight.flight_airplane.tail_number.upcase if flight.flight_airplane}" %></td>
       <td><%= "#{flight.origin.upcase}" %></th>
       <td><%= "#{flight.destination.upcase if flight.destination}" %></td>
       <td><%= "#{flight.time}" %></th>
@@ -27,7 +27,7 @@
   <tr id="total">
     <td colspan="4" class="hidden"></td>
     <td colspan="2">Total:</td>
-    <td><%= @pilot.log_books.first.total_flight_time %></td>
+    <td><%= @pilot.log_book.total_flight_time %></td>
     <td class="hidden"></td>
     <td class="new-flight"><%= link_to "New Flight", new_pilot_flight_path(@pilot) if can_edit? %></td>
   </tr>

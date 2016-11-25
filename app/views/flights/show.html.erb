@@ -5,8 +5,8 @@
     <li><strong>Flight Date:</strong><%= @flight.date.strftime("%m/%d/%Y") %></li>
     <li><strong>Flight Duration:</strong><%= " #{@flight.time}" %></li>
     <li><strong>Airplane:</strong></li>
-    <li>- Make/Model: <%= "#{@flight.airplanes.first.make_model if @flight.airplanes.first}" %></li>
-    <li>- Tail Number: <%= "#{@flight.flight_airplanes.first.tail_number if @flight.flight_airplanes.first}" %></li>
+    <li>- Make/Model: <%= "#{@flight.airplane.make_model if @flight.airplane}" %></li>
+    <li>- Tail Number: <%= "#{@flight.flight_airplane.tail_number if @flight.flight_airplane}" %></li>
     <li><strong>Instructor:</strong><%= " #{@flight.instructor}" %></li>
     <li><strong>Notes:</strong><br><%= " #{@flight.notes}" %></li>
   </ul><br>

@@ -3,7 +3,7 @@
   <ul>
     <li><strong>Name:</strong><%= " #{@pilot.name.capitalize}" %></li>
     <li><strong>Age:</strong><%= @pilot.age ? " #{@pilot.age}" : "  N/A" %></li>
-    <li><strong>Flight Hours:</strong><%= " #{@pilot.log_books.last.total_flight_time}" %></li>
+    <li><strong>Flight Hours:</strong><%= " #{@pilot.log_book.total_flight_time}" %></li>
     <li><strong>Ratings:</strong></li>
     <ol class="ratings">
       <% @pilot.ratings.each do |rating| %>

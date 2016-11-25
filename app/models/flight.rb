@@ -1,17 +1,17 @@
 class Flight < ApplicationRecord
   include DisplayTime::InstanceMethods
   belongs_to :log_book
-  has_many :flight_airplanes
-  has_many :airplanes, through: :flight_airplanes
+  has_one :flight_airplane
+  has_one :airplane, through: :flight_airplane
   delegate :pilot, to: :log_book
   validates :origin, presence: true
-  accepts_nested_attributes_for :flight_airplanes
+  accepts_nested_attributes_for :flight_airplane
   attr_accessor :hours, :minutes
 
-  def flight_airplanes_attributes=(flight_airplane)
+  def flight_airplane_attributes=(flight_airplane)
     # raise flight_airplane.inspect
-    self.flight_airplanes << FlightAirplane.find_or_create_by(flight_id: self.id)
-    self.flight_airplanes.update(flight_airplane["0"])
+    self.flight_airplane = FlightAirplane.find_or_create_by(flight_id: self.id)
+    self.flight_airplane.update(flight_airplane)
   end
 
   def update_duration(hours, minutes)
