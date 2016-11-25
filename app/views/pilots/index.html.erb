@@ -6,5 +6,5 @@
     <th id="ratings">Ratings</th>
     <th id="total-hours">Total Hours</th>
   </tr>
-  <%= render @pilots %>
+  <%= render @pilots.order(:name) %>
 </table>
