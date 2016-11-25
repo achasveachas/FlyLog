@@ -9,7 +9,6 @@ class Flight < ApplicationRecord
   attr_accessor :hours, :minutes
 
   def flight_airplane_attributes=(flight_airplane)
-    # raise flight_airplane.inspect
     self.flight_airplane = FlightAirplane.find_or_create_by(flight_id: self.id)
     self.flight_airplane.update(flight_airplane)
   end

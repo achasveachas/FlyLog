@@ -22,7 +22,7 @@ class FlightsController < ApplicationController
   def create
     @pilot = Pilot.find_by(id: params[:pilot_id])
     if can_edit?
-      @flight = @pilot.log_book.flights.new(flight_params)
+      @flight = @pilot.log_book.flights.create(flight_params)
       @flight.flight_airplane.flight = @flight
       @flight.update_duration(params[:flight][:hours], params[:flight][:minutes])
       if @flight.save!
