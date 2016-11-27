@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/logout' => 'sessions#destroy'
   #Omniauth routes
   get '/auth/github/callback' => 'sessions#create_oauth'
+  get '/auth/failure' => 'index#home'
 
   resources :pilots do
     resources :flights

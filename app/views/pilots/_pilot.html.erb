@@ -1,6 +1,6 @@
 <% if pilot %>
   <tr>
-    <td><%= link_to pilot.name, pilot_path(pilot) %></td>
+    <td><%= link_to pilot.name.titleize, pilot_path(pilot) %></td>
     <td><%= pilot.flights.first.date.strftime("%m/%d/%Y") if pilot.flights.first %></td>
     <td><strong><%= display_ratings(pilot) %></strong></td>
     <td><%= pilot.log_book.total_flight_time %></td>
