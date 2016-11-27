@@ -11,7 +11,7 @@ class Pilot < ApplicationRecord
   after_create :create_log_book
 
   def create_log_book
-    self.log_book.create
+    self.create_log_book
   end
 
 end
