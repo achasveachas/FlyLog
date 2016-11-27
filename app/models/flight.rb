@@ -1,7 +1,7 @@
 class Flight < ApplicationRecord
   include DisplayTime::InstanceMethods
   belongs_to :log_book
-  has_one :flight_airplane
+  has_one :flight_airplane, dependent: :destroy
   has_one :airplane, through: :flight_airplane
   delegate :pilot, to: :log_book
   validates :origin, presence: true
