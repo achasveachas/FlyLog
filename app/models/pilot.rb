@@ -8,9 +8,9 @@ class Pilot < ApplicationRecord
   validates :email, format: {with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i}
   validates :password, length: {minimum: 6}, on: :create
   validates :password, confirmation: true, on: :create
-  after_create :create_log_book
+  after_create :creates_log_book
 
-  def create_log_book
+  def creates_log_book
     self.create_log_book
   end
 
