@@ -23,6 +23,9 @@
     <label for="pilot_password_confirmation">Password confirmation:</label><br>
     <%= f.password_field :password_confirmation %><br><br>
   <% end %>
-  <%= f.collection_check_boxes :rating_ids, Rating.all, :id, :rating %><br><br>
+  <%= f.collection_check_boxes :rating_ids, Rating.all, :id, :rating do |rating| %>
+    <%= rating.check_box %> <%= rating.label %> <br>
+  <% end %>
+  <br><br>
   <%= f.submit %>
 <% end %>
