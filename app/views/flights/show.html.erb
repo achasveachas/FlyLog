@@ -12,3 +12,4 @@
   </ul><br>
   <%= link_to "Edit flight", edit_pilot_flight_path(@pilot, @flight) if can_edit? %> | <%= link_to "Delete flight", pilot_flight_path(@pilot, @flight), method: :delete if can_edit? %>
 </div>
+<%= link_to "<<< Back to Logbook", :back %>
