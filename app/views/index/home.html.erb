@@ -1,7 +1,8 @@
 <div class="home">
   <h1>Welcome to FlyLog!</h1><br><br>
   <%= image_tag("pilot-clipart-pilot.png", id: "pilot-clipart") %>
-  <h2><%= link_to "Click here to log in or sign up using your GitHub account", "/auth/github" %> </h2>
-  <h3>Or you can <%= link_to "Sign up", new_pilot_path %> or <%= link_to "Log in", signin_path %> using your email address.</h3>
+  <h2><%= link_to "Sign up", new_pilot_path %> or <%= link_to "Log in", signin_path %> using your email address.</h2>
+  <h3><%= link_to "Or you can click here to log in or sign up using your GitHub account", "/auth/github" %> </h3>
+
 
 </div>
