@@ -11,5 +11,8 @@
       <% end %>
     </ol>
   </ul><br>
-  <%= link_to "Edit Pilot", edit_pilot_path(@pilot) if can_edit? %><%= " | #{link_to "Delete Pilot", pilot_path(@pilot), method: :delete}" if current_pilot.admin %>
+  <%= link_to "Edit Pilot", edit_pilot_path(@pilot) if can_edit? %>
+  <% if current_pilot.admin %>
+    | <%= link_to "Delete Pilot", pilot_path(@pilot), method: :delete %>
+  <% end %>
 </div>
