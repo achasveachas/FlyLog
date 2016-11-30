@@ -27,7 +27,7 @@ end
 
 Pilot.all.each do |pilot|
   5.times do
-    flight = pilot.log_books.last.flights.create(date: Date.today, duration: rand(45..450), origin: "FRG", notes: Faker::Lorem.sentences(3).join(" "), instructor: Faker::Name.name)
-    flight.flight_airplanes.create(tail_number: "N#{Faker::Number.number(6)}", airplane_id: Airplane.order("RANDOM()").first.id)
+    flight = pilot.log_book.flights.create(date: Date.today, duration: rand(45..450), origin: "FRG", notes: Faker::Lorem.sentences(3).join(" "), instructor: Faker::Name.name)
+    flight.create_flight_airplane(tail_number: "N#{Faker::Number.number(6)}", airplane_id: Airplane.order("RANDOM()").first.id)
   end
 end
