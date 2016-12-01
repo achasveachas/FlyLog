@@ -52,6 +52,17 @@ class PilotsController < ApplicationController
     end
   end
 
+  def admin
+    @pilot = Pilot.find_by(id: params[:id])
+    if current_pilot.admin && current_pilot != @pilot
+      @pilot.admin = !@pilot.admin
+      @pilot.save
+    else
+      flash[:notice] = "You do not have permission to perform this action"
+    end
+    redirect_to :back
+  end
+
   private
 
   def pilot_params
