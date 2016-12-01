@@ -13,12 +13,12 @@ Specs:
 - [x] Include login (how e.g. Devise) - Pilots can log in
 - [x] Include logout (how e.g. Devise) - Pilots can log out
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth) - GitHub omniauth
-- [x] Include nested resource show or index (URL e.g. users/2/recipes)
+- [x] Include nested resource show or index (URL e.g. users/2/recipes) - pilot/:id/flights/:flight_id/
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients) - pilot/:id/flight/new
 - [x] Include form display of validation errors (form URL e.g. /recipes/new) - Sign up form displays validation errors when required fields are missing or wrong format
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] The application is pretty DRY - I tried (though I'll bet there's room to refactor)
+- [x] Limited logic in controllers - I tried to cut out anything that can go into the model or helper methods
+- [x] Views use helper methods if appropriate - there's a helper method to display the Pilot's ratings
+- [x] Views use partials if appropriate - there are partials for all forms, to display pilot info, flight info, to render the flights collection in the logbook
