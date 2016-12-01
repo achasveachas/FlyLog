@@ -12,7 +12,7 @@
     </ol>
   </ul><br>
   <%= link_to "Edit Pilot", edit_pilot_path(@pilot) if can_edit? %>
-  <% if current_pilot.admin %>
-    | <%= link_to "Delete Pilot", pilot_path(@pilot), method: :delete %>
+  <% if current_pilot.admin && current_pilot != @pilot %>
+    | <%= link_to "Delete Pilot", pilot_path(@pilot), method: :delete %> | <%= link_to "Make Admin", admin_path(@pilot) %>
   <% end %>
 </div>

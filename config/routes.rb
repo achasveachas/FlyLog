@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :flights
   end
 
+  get '/pilots/:id/admin' => 'pilots#admin', as: 'admin'
+
 end
