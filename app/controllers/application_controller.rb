@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_pilot, :can_edit?
+  before_action :require_login
 
   private
 
@@ -19,4 +20,12 @@ class ApplicationController < ActionController::Base
   def can_edit?
     current_pilot && (current_pilot.admin || @pilot == current_pilot)
   end
+
+  def require_login
+    unless current_pilot
+      flash[:notice] = "You must be logged in to access this section"
+      redirect_to root_path
+    end
+  end
+
 end
