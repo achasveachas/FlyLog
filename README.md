@@ -8,11 +8,12 @@ Once signed up, pilots can start logging their flights, and comparing their prog
 
 ## Usage
 
-For now the app can be accessed through the github repo (https://github.com/achasveachas/FlyLog)
+The app can be found at https://flylogger.herokuapp.com/
+
+The app can also be accessed through the github repo (https://github.com/achasveachas/FlyLog)
 
 Clone the log and fire it up using the Rails Server.
 
-Eventually it will be available via heroku
 
 ## Contributing
 
