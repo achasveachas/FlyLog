@@ -1,3 +1,4 @@
 <h1><%= "#{@pilot.name.titleize}" %></h1>
 <%= render 'pilot-info' %>
 <%= render "flights/flights" %>
+<%= link_to "New Flight", new_pilot_flight_path(@pilot) if can_edit? %>

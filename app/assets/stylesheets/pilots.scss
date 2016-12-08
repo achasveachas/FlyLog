@@ -23,6 +23,8 @@ table.logbook {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 1px solid black;
+  border-collapse: collapse;
+  empty-cells: hide;
 }
 
 table.pilots {
@@ -33,8 +35,9 @@ table.pilots {
 }
 
 table, th, td {
-    border-left: 1px solid black;
-    border-collapse: collapse;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
 }
 
 th, td {
@@ -53,6 +56,11 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
   background-color: #e7f5fb;
+}
+
+tr:last-child td:empty {
+  border: none;
+  visibility: hidden;
 }
 
 th#number{
@@ -103,25 +111,10 @@ th#total-hours{
   width: 7%
 }
 
-td.hidden {
-  visibility: hidden;
-}
-
-td.new-flight {
-  background-color: white;
-  border-style: hidden;
-  border-top: 1px black solid;
-  text-align: right;
-  font-size: 1.5em
+td#total {
+  border-right: 1px black solid;
 }
 
 .button_to {
   height: 50px
-}
-
-tr#total{
-  visibility: visible;
-  font-weight: bold;
-  border-top: 1px solid black;
-
 }

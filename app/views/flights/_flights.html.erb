@@ -24,11 +24,10 @@
     </tr>
   <% end %>
 
-  <tr id="total">
-    <td colspan="4" class="hidden"></td>
-    <td colspan="2">Total:</td>
-    <td><%= @pilot.log_book.total_flight_time %></td>
-    <td class="hidden"></td>
-    <td class="new-flight"><%= link_to "New Flight", new_pilot_flight_path(@pilot) if can_edit? %></td>
+  <tr>
+    <td colspan="4"></td>
+    <td colspan="2" class="total">Total:</td>
+    <td id="total"><%= @pilot.log_book.total_flight_time %></td>
+    <td colspan="2"></td>
   </tr>
 </table>
