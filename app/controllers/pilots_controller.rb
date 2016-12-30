@@ -6,7 +6,7 @@ class PilotsController < ApplicationController
   end
 
   def show
-    @pilot = Pilot.find(params[:id])
+    @pilot = Pilot.find_by_id(params[:id])
     @flights = @pilot.flights
   end
 
@@ -25,7 +25,7 @@ class PilotsController < ApplicationController
   end
 
   def edit
-    @pilot = Pilot.find(params[:id])
+    @pilot = Pilot.find_by_id(params[:id])
     if !can_edit?
       flash[:notice] = "You do not have permission to edit this page"
       redirect_to :back
@@ -33,7 +33,7 @@ class PilotsController < ApplicationController
   end
 
   def update
-    @pilot = Pilot.find(params[:id])
+    @pilot = Pilot.find_by_id(params[:id])
     if can_edit?
       @pilot.update(pilot_params)
       redirect_to pilot_path(@pilot)
@@ -44,7 +44,7 @@ class PilotsController < ApplicationController
   end
 
   def destroy
-    @pilot = Pilot.find_by(id: params[:id])
+    @pilot = Pilot.find_by_id(params[:id])
     if current_pilot.admin && current_pilot != @pilot
       @pilot.destroy
       redirect_to pilots_path
