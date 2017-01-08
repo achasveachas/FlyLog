@@ -28,7 +28,7 @@ class FlightsController < ApplicationController
       if @flight.save!
         redirect_to pilot_path(@flight.pilot)
       else
-        redirect_to :back
+        render :new
       end
     else
       flash[:notice] = "You do not have permission to edit this page"
