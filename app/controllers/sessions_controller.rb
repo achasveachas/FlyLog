@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @pilot = Pilot.find_by(email: params[:pilot][:email])
+    @pilot = Pilot.find_by_email(params[:pilot][:email])
     if !!@pilot && @pilot.authenticate(params[:pilot][:password])
       login(@pilot)
       redirect_to pilot_path(@pilot)
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def create_oauth
-    if @pilot = Pilot.find_by(email: request.env['omniauth.auth']['info']['email'])
+    if @pilot = Pilot.find_by_email(request.env['omniauth.auth']['info']['email'])
       login(@pilot)
       redirect_to pilot_path(@pilot)
     else
