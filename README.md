@@ -10,7 +10,7 @@ Once signed up, pilots can start logging their flights, and comparing their prog
 
 The app can be found at [this link](https://flylogger.herokuapp.com/)
 
-To run the app locally clone this repo. Then run `bundle install` in your terminal, run the migrations using `rake db:migrate`, and then run `rails server`. The app will be available at [localhost:3000](http://localhost:3000/).
+To run the app locally clone this repo. Then run `bundle install` in your terminal. Run the migrations using `rake db:migrate` and you can seed the database with dummy data by running `rake db:seed`. You can now run `rails server` in your terminal; The app will be available at [localhost:3000](http://localhost:3000/).
 
 
 ## Contributing
